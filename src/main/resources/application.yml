@@ -5,6 +5,11 @@ spring:
     password: postgres
   jpa:
     hibernate:
+      jdbc:
+        batch_size: 50
+        order_inserts: true
+        order_updates: true
+        generate_statistics: false
       ddl-auto: update
     show-sql: true
     properties:
