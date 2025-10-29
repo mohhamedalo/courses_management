@@ -6,6 +6,7 @@ import com.example.demo2.entity.Role;
 import com.example.demo2.entity.User;
 import com.example.demo2.dto.request.*;
 import com.example.demo2.dto.response.*;
+import com.example.demo2.exception.ResourceNotFoundException;
 import com.example.demo2.repository.RoleRepository;
 import com.example.demo2.repository.UserRepository;
 import com.example.demo2.service.AuthService;
@@ -87,5 +88,9 @@ public class AuthService {
                 .orElseThrow(() -> new RuntimeException("User not found"));
         refreshTokenService.deleteByUser(user);
         return "Logged out successfully";
+    }
+
+    public User findOneById(Long userId) {
+        return userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User not found " + userId));
     }
 }
