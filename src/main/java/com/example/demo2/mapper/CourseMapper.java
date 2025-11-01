@@ -5,6 +5,7 @@ import com.example.demo2.dto.response.courses.CourseResponse;
 import com.example.demo2.dto.response.lessons.LessonResponse;
 import com.example.demo2.entity.Course;
 
+import java.util.Collections;
 import java.util.Comparator;
 
 public class CourseMapper {
@@ -24,7 +25,9 @@ public class CourseMapper {
                         .name(c.getCategory().getName())
                         .description(c.getCategory().getDescription())
                         .build())
-                .lessons(c.getLessons().stream()
+                .lessons(c.getLessons() == null || c.getLessons().isEmpty()
+                        ? Collections.emptyList()
+                        : c.getLessons().stream()
                         .map(LessonMapper::toResponse)
                         .sorted(Comparator.comparing(LessonResponse::getOrderIndex)) // optional
                         .toList())

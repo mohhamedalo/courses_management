@@ -17,6 +17,7 @@ import lombok.Builder;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -34,7 +35,10 @@ public class CourseService {
 //    private final SecurityUtils securityUtils;
 
     public CourseResponse create(CreateCourseRequest request) {
-        Long userId = SecurityUtils.getCurrentUserId();
+        User loginUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Long userId = loginUser.getId();
+
+//        Long userId = SecurityUtils.getCurrentUserId();
         Category c = categoryService.findOneById(Long.valueOf(request.getCategoryId()));
         User instructor = authService.findOneById(userId);
 
