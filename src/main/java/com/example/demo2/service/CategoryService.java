@@ -10,6 +10,8 @@ import com.example.demo2.mapper.CategoryMapper;
 import com.example.demo2.repository.CategoryRepository;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -23,6 +25,7 @@ import java.util.Optional;
 public class CategoryService {
     private final CategoryRepository categoryRepository;
 
+    @CacheEvict(value = "categories", allEntries = true)
     public CategoryResponse create(CreateCategoryRequest request) {
 
         Category c = Category.builder()
@@ -35,6 +38,11 @@ public class CategoryService {
         return new CategoryResponse(c.getId(), c.getName(), c.getDescription());
     }
 
+    // Cache key = "categories::page::size::sort"
+//    @Cacheable(
+//            value = "categories",                     // Redis cache name
+//            key = "#pageable.pageNumber + '::' + #pageable.pageSize + '::' + #pageable.sort.toString()"
+//    )
     public Page<CategoryResponse> getAll(Pageable pageable) {
         return categoryRepository.findAll(pageable).map(CategoryMapper::toResponse);
     }
@@ -43,6 +51,13 @@ public class CategoryService {
         return categoryRepository.findById(categoryId);
     }
 
+    @Cacheable(value = "categories", key = "#categoryId")
+    public CategoryResponse getOneCategory(Long categoryId) {
+        Category c = findOneById(categoryId);
+        return CategoryMapper.toResponse(c);
+    }
+
+    @CacheEvict(value = "categories", allEntries = true)
     @Transactional
     public CategoryResponse update(Long categoryId, UpdateCategoryRequest request) {
         Category category = categoryRepository.findById(categoryId)
@@ -62,6 +77,7 @@ public class CategoryService {
         return CategoryMapper.toResponse(updated);
     }
 
+    @CacheEvict(value = "categories", allEntries = true)
     public String delete(Long categoryId) {
 
         Category category = categoryRepository.findById(categoryId)

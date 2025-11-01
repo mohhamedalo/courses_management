@@ -1,8 +1,8 @@
 version: '3.9'
 services:
   postgres:
-    image: postgres:15
-    container_name: pg15_courseonlineapp
+    image: postgres:16-alpine
+    container_name: pg16_courseonlineapp
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -11,5 +11,24 @@ services:
       - "5434:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis_courseonlineapp
+    command: redis-server --bind 0.0.0.0 --save 60 1 --loglevel warning
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - app-network
+
 volumes:
   pgdata:
+  redis-data:
+
+networks:
+  app-network:
+    driver: bridge
