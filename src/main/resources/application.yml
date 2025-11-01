@@ -10,10 +10,57 @@ spring:
         order_inserts: true
         order_updates: true
         generate_statistics: false
-      ddl-auto: update
+      ddl-auto: none #switch to update if generate tables automatically by entity files.
     show-sql: true
     properties:
       hibernate:
         format_sql: true
+
+    # FLYWAY: BẬT VÀ CẤU HÌNH
+  flyway:
+    ### auto migration by entities
+    # enabled: true
+    # locations: classpath:db/migration
+    # baseline-on-migrate: true
+    # validate-on-migrate: true
+    # clean-disabled: false  # Cho phép clean khi dev (cẩn thận!)
+    # out-of-order: false  # Không cho chạy migration lộn xộn
+
+    ## migration by flyway
+    locations: classpath:dev/db/migration,classpath:db/migration
+    baseline-on-migrate: true
+    baseline-version: 0
+
+  data:
+    redis:
+      host: localhost         # Tên service trong Docker
+      port: 6379
+      password: null       # Không cần nếu không set
+      timeout: 2000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+          max-wait: -1ms
+
+# Cache config (tùy chọn)
+  cache:
+    type: redis
+    redis:
+      time-to-live: 600000   # 10 phút
+      key-prefix:
+        courseapp:
+      use-key-prefix: true
 server:
   port: 8084
+
+logging:
+  level:
+    org.springframework.data.redis: DEBUG
+    io.lettuce.core: DEBUG
+    org.flywaydb: INFO  # Xem Flyway chạy migration
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql: TRACE
+#    org.springframework: DEBUG
+#    org.springframework.boot.web: DEBUG
