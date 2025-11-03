@@ -1,0 +1,778 @@
+2025-11-03 22:52:32.515 [restartedMain] INFO  c.e.demo2.OnlineCourseApplication - Starting OnlineCourseApplication using Java 21.0.8 with PID 81596 (/Users/minhhai1/Desktop/vmo-java/demo2/target/classes started by minhhai1 in /Users/minhhai1/Desktop/vmo-java/demo2)
+2025-11-03 22:52:32.518 [restartedMain] DEBUG c.e.demo2.OnlineCourseApplication - Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-11-03 22:52:32.519 [restartedMain] INFO  c.e.demo2.OnlineCourseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-03 22:52:32.588 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-03 22:52:32.588 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-03 22:52:34.941 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-03 22:52:34.944 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-03 22:52:35.207 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 252 ms. Found 9 JPA repository interfaces.
+2025-11-03 22:52:35.228 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-03 22:52:35.229 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-11-03 22:52:35.254 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.CategoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 22:52:35.258 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.CourseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 22:52:35.259 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.EnrollmentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 22:52:35.260 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.LessonRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 22:52:35.260 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.QuizAnswerRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 22:52:35.260 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.QuizRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 22:52:35.261 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.RefreshTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 22:52:35.261 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.RoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 22:52:35.261 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 22:52:35.261 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2025-11-03 22:52:36.475 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2025-11-03 22:52:36.500 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-03 22:52:36.500 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-03 22:52:36.570 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-03 22:52:36.571 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3982 ms
+2025-11-03 22:52:37.560 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5434/course_db (PostgreSQL 16.10)
+2025-11-03 22:52:37.650 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.045s)
+2025-11-03 22:52:37.740 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-11-03 22:52:37.746 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-11-03 22:52:37.938 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-03 22:52:38.019 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-03 22:52:38.066 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-11-03 22:52:38.468 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-03 22:52:38.656 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.DriverManagerDataSource@464476fd']
+	Database driver: undefined/unknown
+	Database version: 16.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-03 22:52:40.369 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-03 22:52:40.373 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-03 22:52:40.804 [restartedMain] DEBUG c.e.d.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-11-03 22:52:40.806 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-11-03 22:52:40.806 [restartedMain] DEBUG c.e.demo2.config.RateLimiterFilter - Filter 'rateLimiterFilter' configured for use
+2025-11-03 22:52:40.999 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-11-03 22:52:41.376 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-03 22:52:44.916 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-03 22:52:45.429 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 26 mappings in 'requestMappingHandlerMapping'
+2025-11-03 22:52:45.715 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-11-03 22:52:46.020 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/api/actuator'
+2025-11-03 22:52:46.521 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-11-03 22:52:46.636 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-11-03 22:52:47.362 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-11-03 22:52:47.490 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/'
+2025-11-03 22:52:47.518 [restartedMain] INFO  c.e.demo2.OnlineCourseApplication - Started OnlineCourseApplication in 15.858 seconds (process running for 18.537)
+2025-11-03 22:52:51.458 [http-nio-8084-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-03 22:52:51.460 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-11-03 22:52:51.461 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-11-03 22:52:51.461 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-11-03 22:52:51.462 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-11-03 22:52:51.477 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2ada42f2
+2025-11-03 22:52:51.479 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@85f904
+2025-11-03 22:52:51.480 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-11-03 22:52:51.481 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 21 ms
+2025-11-03 22:52:51.653 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html", parameters={}
+2025-11-03 22:52:51.658 [http-nio-8084-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-11-03 22:52:51.724 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-03 22:52:51.806 [http-nio-8084-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.css", parameters={}
+2025-11-03 22:52:51.806 [http-nio-8084-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
+2025-11-03 22:52:51.806 [http-nio-8084-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui.css", parameters={}
+2025-11-03 22:52:51.807 [http-nio-8084-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-11-03 22:52:51.807 [http-nio-8084-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-11-03 22:52:51.808 [http-nio-8084-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-11-03 22:52:51.812 [http-nio-8084-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-03 22:52:51.815 [http-nio-8084-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-03 22:52:51.826 [http-nio-8084-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-initializer.js", parameters={}
+2025-11-03 22:52:51.826 [http-nio-8084-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2025-11-03 22:52:51.827 [http-nio-8084-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-11-03 22:52:51.827 [http-nio-8084-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-11-03 22:52:51.842 [http-nio-8084-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-03 22:52:51.844 [http-nio-8084-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-03 22:52:51.865 [http-nio-8084-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-03 22:52:52.144 [http-nio-8084-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/v3/api-docs/swagger-config", parameters={}
+2025-11-03 22:52:52.146 [http-nio-8084-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2025-11-03 22:52:52.171 [http-nio-8084-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/favicon-32x32.png", parameters={}
+2025-11-03 22:52:52.172 [http-nio-8084-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-11-03 22:52:52.177 [http-nio-8084-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-03 22:52:52.243 [http-nio-8084-exec-7] INFO  c.e.d.c.aspects.PerformanceAspect - After execution of: openapiJson
+2025-11-03 22:52:52.250 [http-nio-8084-exec-7] INFO  c.e.d.c.aspects.PerformanceAspect - Execution time of method: openapiJsonis 3ms
+2025-11-03 22:52:52.259 [http-nio-8084-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json]
+2025-11-03 22:52:52.275 [http-nio-8084-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8084/swagger-ui/oauth2-re (truncated)...]
+2025-11-03 22:52:52.289 [http-nio-8084-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-03 22:52:52.661 [http-nio-8084-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/v3/api-docs", parameters={}
+2025-11-03 22:52:52.661 [http-nio-8084-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2025-11-03 22:52:53.532 [http-nio-8084-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 844 ms
+2025-11-03 22:52:53.568 [http-nio-8084-exec-9] INFO  c.e.d.c.aspects.PerformanceAspect - After execution of: openapiJson
+2025-11-03 22:52:53.569 [http-nio-8084-exec-9] INFO  c.e.d.c.aspects.PerformanceAspect - Execution time of method: openapiJsonis 882ms
+2025-11-03 22:52:53.569 [http-nio-8084-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, */*] and supported [application/json]
+2025-11-03 22:52:53.573 [http-nio-8084-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2025-11-03 22:52:53.574 [http-nio-8084-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-03 22:53:39.886 [http-nio-8084-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/refresh", parameters={}
+2025-11-03 22:53:39.890 [http-nio-8084-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.demo2.controller.AuthController#refreshToken(Map, HttpServletRequest)
+2025-11-03 22:53:39.997 [http-nio-8084-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [{refreshToken=e17f06be-fc34-4737-975d-4a7f13235979, additionalProp2=string, additionalProp3=string}]
+2025-11-03 22:53:40.418 [http-nio-8084-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiry_date,
+        rt1_0.token,
+        rt1_0.user_id 
+    from
+        refresh_tokens rt1_0 
+    where
+        rt1_0.token=?
+2025-11-03 22:53:40.542 [http-nio-8084-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.avatar_url,
+        u1_0.bio,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    left join
+        user_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        u1_0.id=?
+2025-11-03 22:53:40.620 [http-nio-8084-exec-10] INFO  c.e.d.c.aspects.PerformanceAspect - After execution of: refreshToken
+2025-11-03 22:53:40.620 [http-nio-8084-exec-10] INFO  c.e.d.c.aspects.PerformanceAspect - Execution time of method: refreshTokenis 602ms
+2025-11-03 22:53:40.630 [http-nio-8084-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2025-11-03 22:53:40.630 [http-nio-8084-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.demo2.dto.response.ApiResponse@4ee898ae]
+2025-11-03 22:53:40.645 [http-nio-8084-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-03 22:54:03.629 [http-nio-8084-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.avatar_url,
+        u1_0.bio,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-11-03 22:54:03.703 [http-nio-8084-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2025-11-03 22:54:03.723 [http-nio-8084-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/enrollments/1/show", parameters={}
+2025-11-03 22:54:03.724 [http-nio-8084-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.demo2.controller.EnrollmentController#show(Long, HttpServletRequest)
+2025-11-03 22:54:03.802 [http-nio-8084-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        e1_0.id,
+        e1_0.completed_at,
+        e1_0.course_id,
+        e1_0.enrolled_at,
+        e1_0.progress,
+        e1_0.student_id 
+    from
+        enrollments e1_0 
+    where
+        e1_0.id=?
+2025-11-03 22:54:03.825 [http-nio-8084-exec-3] INFO  c.e.d.c.aspects.PerformanceAspect - After execution of: show
+2025-11-03 22:54:03.826 [http-nio-8084-exec-3] INFO  c.e.d.c.aspects.PerformanceAspect - Execution time of method: showis 96ms
+2025-11-03 22:54:03.827 [http-nio-8084-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/yaml]
+2025-11-03 22:54:03.828 [http-nio-8084-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.demo2.dto.response.ApiResponse@1c9b395]
+2025-11-03 22:54:03.841 [http-nio-8084-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-03 23:12:21.077 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-03 23:12:21.145 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-11-03 23:12:21.396 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-03 23:12:28.389 [restartedMain] INFO  c.e.demo2.OnlineCourseApplication - Starting OnlineCourseApplication using Java 21.0.8 with PID 83112 (/Users/minhhai1/Desktop/vmo-java/demo2/target/classes started by minhhai1 in /Users/minhhai1/Desktop/vmo-java/demo2)
+2025-11-03 23:12:28.391 [restartedMain] DEBUG c.e.demo2.OnlineCourseApplication - Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-11-03 23:12:28.392 [restartedMain] INFO  c.e.demo2.OnlineCourseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-03 23:12:28.450 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-03 23:12:28.450 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-03 23:12:30.450 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-03 23:12:30.452 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-03 23:12:30.680 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 212 ms. Found 9 JPA repository interfaces.
+2025-11-03 23:12:30.704 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-03 23:12:30.705 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-11-03 23:12:30.734 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.CategoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 23:12:30.736 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.CourseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 23:12:30.736 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.EnrollmentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 23:12:30.737 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.LessonRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 23:12:30.737 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.QuizAnswerRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 23:12:30.737 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.QuizRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 23:12:30.737 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.RefreshTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 23:12:30.738 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.RoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 23:12:30.738 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 23:12:30.738 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2025-11-03 23:12:31.741 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2025-11-03 23:12:31.755 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-03 23:12:31.756 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-03 23:12:31.800 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-03 23:12:31.800 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3349 ms
+2025-11-03 23:12:32.453 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5434/course_db (PostgreSQL 16.10)
+2025-11-03 23:12:32.517 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.033s)
+2025-11-03 23:12:32.590 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-11-03 23:12:32.593 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-11-03 23:12:32.733 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-03 23:12:32.797 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-03 23:12:32.836 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-11-03 23:12:33.155 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-03 23:12:33.296 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.DriverManagerDataSource@5b91ee03']
+	Database driver: undefined/unknown
+	Database version: 16.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-03 23:12:34.609 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-03 23:12:34.615 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-03 23:12:35.077 [restartedMain] DEBUG c.e.d.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-11-03 23:12:35.078 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-11-03 23:12:35.078 [restartedMain] DEBUG c.e.demo2.config.RateLimiterFilter - Filter 'rateLimiterFilter' configured for use
+2025-11-03 23:12:35.179 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-11-03 23:12:35.435 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-03 23:12:37.117 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-03 23:12:37.266 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 26 mappings in 'requestMappingHandlerMapping'
+2025-11-03 23:12:37.438 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-11-03 23:12:37.593 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/api/actuator'
+2025-11-03 23:12:37.909 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-11-03 23:12:37.968 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-11-03 23:12:38.490 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-11-03 23:12:38.556 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/'
+2025-11-03 23:12:38.578 [restartedMain] INFO  c.e.demo2.OnlineCourseApplication - Started OnlineCourseApplication in 11.058 seconds (process running for 11.692)
+2025-11-03 23:12:43.806 [http-nio-8084-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-03 23:12:43.806 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-11-03 23:12:43.807 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-11-03 23:12:43.807 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-11-03 23:12:43.807 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-11-03 23:12:43.809 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@45a9e91e
+2025-11-03 23:12:43.809 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@4dc85627
+2025-11-03 23:12:43.810 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-11-03 23:12:43.810 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2025-11-03 23:12:44.127 [http-nio-8084-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.avatar_url,
+        u1_0.bio,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-11-03 23:12:44.221 [http-nio-8084-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2025-11-03 23:12:44.286 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/enrollments/1/show", parameters={}
+2025-11-03 23:12:44.288 [http-nio-8084-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.demo2.controller.EnrollmentController#show(Long, HttpServletRequest)
+2025-11-03 23:12:44.361 [http-nio-8084-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.avatar_url,
+        u1_0.bio,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    left join
+        user_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        u1_0.id=?
+2025-11-03 23:12:44.377 [http-nio-8084-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        e1_0.id,
+        e1_0.completed_at,
+        e1_0.course_id,
+        e1_0.enrolled_at,
+        e1_0.progress,
+        e1_0.student_id 
+    from
+        enrollments e1_0 
+    where
+        e1_0.id=?
+2025-11-03 23:12:44.401 [http-nio-8084-exec-1] INFO  c.e.d.c.aspects.PerformanceAspect - After execution of: show
+2025-11-03 23:12:44.402 [http-nio-8084-exec-1] INFO  c.e.d.c.aspects.PerformanceAspect - Execution time of method: showis 87ms
+2025-11-03 23:12:44.415 [http-nio-8084-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/yaml]
+2025-11-03 23:12:44.418 [http-nio-8084-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.demo2.dto.response.ApiResponse@443394d9]
+2025-11-03 23:12:44.444 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-03 23:12:48.396 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-03 23:12:48.407 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-11-03 23:12:48.435 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-03 23:12:51.720 [restartedMain] INFO  c.e.demo2.OnlineCourseApplication - Starting OnlineCourseApplication using Java 21.0.8 with PID 83141 (/Users/minhhai1/Desktop/vmo-java/demo2/target/classes started by minhhai1 in /Users/minhhai1/Desktop/vmo-java/demo2)
+2025-11-03 23:12:51.726 [restartedMain] DEBUG c.e.demo2.OnlineCourseApplication - Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-11-03 23:12:51.727 [restartedMain] INFO  c.e.demo2.OnlineCourseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-03 23:12:51.781 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-03 23:12:51.781 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-03 23:12:53.920 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-03 23:12:53.922 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-03 23:12:54.112 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 179 ms. Found 9 JPA repository interfaces.
+2025-11-03 23:12:54.131 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-03 23:12:54.132 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-11-03 23:12:54.158 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.CategoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 23:12:54.159 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.CourseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 23:12:54.160 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.EnrollmentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 23:12:54.160 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.LessonRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 23:12:54.160 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.QuizAnswerRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 23:12:54.160 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.QuizRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 23:12:54.161 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.RefreshTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 23:12:54.161 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.RoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 23:12:54.161 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo2.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-11-03 23:12:54.161 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2025-11-03 23:12:55.160 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2025-11-03 23:12:55.173 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-03 23:12:55.173 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-03 23:12:55.210 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-03 23:12:55.210 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3428 ms
+2025-11-03 23:12:55.923 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5434/course_db (PostgreSQL 16.10)
+2025-11-03 23:12:55.989 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.034s)
+2025-11-03 23:12:56.069 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2025-11-03 23:12:56.073 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-11-03 23:12:56.219 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-03 23:12:56.284 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-03 23:12:56.322 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-11-03 23:12:56.615 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-03 23:12:56.740 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.DriverManagerDataSource@2ac513c9']
+	Database driver: undefined/unknown
+	Database version: 16.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-03 23:12:57.979 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-03 23:12:57.985 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-03 23:12:58.407 [restartedMain] DEBUG c.e.d.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-11-03 23:12:58.408 [restartedMain] DEBUG o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2025-11-03 23:12:58.408 [restartedMain] DEBUG c.e.demo2.config.RateLimiterFilter - Filter 'rateLimiterFilter' configured for use
+2025-11-03 23:12:58.515 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-11-03 23:12:58.760 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-03 23:13:00.430 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-03 23:13:00.593 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 26 mappings in 'requestMappingHandlerMapping'
+2025-11-03 23:13:00.764 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-11-03 23:13:00.924 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/api/actuator'
+2025-11-03 23:13:01.242 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-11-03 23:13:01.306 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-11-03 23:13:01.874 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-11-03 23:13:01.956 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/'
+2025-11-03 23:13:01.978 [restartedMain] INFO  c.e.demo2.OnlineCourseApplication - Started OnlineCourseApplication in 10.914 seconds (process running for 12.456)
+2025-11-03 23:13:13.001 [http-nio-8084-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-03 23:13:13.002 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-11-03 23:13:13.002 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-11-03 23:13:13.003 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-11-03 23:13:13.003 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-11-03 23:13:13.005 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@8ec2fe2
+2025-11-03 23:13:13.006 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@426a9075
+2025-11-03 23:13:13.007 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-11-03 23:13:13.007 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2025-11-03 23:13:13.196 [http-nio-8084-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.avatar_url,
+        u1_0.bio,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-11-03 23:13:13.270 [http-nio-8084-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2025-11-03 23:13:13.309 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/enrollments/1/show", parameters={}
+2025-11-03 23:13:13.312 [http-nio-8084-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.demo2.controller.EnrollmentController#show(Long, HttpServletRequest)
+2025-11-03 23:13:13.384 [http-nio-8084-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.avatar_url,
+        u1_0.bio,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    left join
+        user_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        u1_0.id=?
+2025-11-03 23:13:35.872 [http-nio-8084-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        e1_0.id,
+        e1_0.completed_at,
+        e1_0.course_id,
+        e1_0.enrolled_at,
+        e1_0.progress,
+        e1_0.student_id 
+    from
+        enrollments e1_0 
+    where
+        e1_0.id=?
+2025-11-03 23:13:40.103 [http-nio-8084-exec-1] INFO  c.e.d.c.aspects.PerformanceAspect - After execution of: show
+2025-11-03 23:13:40.105 [http-nio-8084-exec-1] INFO  c.e.d.c.aspects.PerformanceAspect - Execution time of method: showis 26763ms
+2025-11-03 23:13:40.123 [http-nio-8084-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/yaml]
+2025-11-03 23:13:40.125 [http-nio-8084-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.demo2.dto.response.ApiResponse@649ba8fb]
+2025-11-03 23:13:40.150 [http-nio-8084-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-03 23:15:02.791 [http-nio-8084-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.avatar_url,
+        u1_0.bio,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-11-03 23:15:02.878 [http-nio-8084-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2025-11-03 23:15:02.909 [http-nio-8084-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/login", parameters={}
+2025-11-03 23:15:02.910 [http-nio-8084-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.demo2.controller.AuthController#login(LoginRequest, HttpServletRequest)
+2025-11-03 23:15:03.125 [http-nio-8084-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.demo2.dto.request.LoginRequest@2817f99e]
+2025-11-03 23:15:03.418 [http-nio-8084-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.avatar_url,
+        u1_0.bio,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-11-03 23:15:03.458 [http-nio-8084-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2025-11-03 23:15:03.570 [http-nio-8084-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.avatar_url,
+        u1_0.bio,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-11-03 23:15:03.657 [http-nio-8084-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiry_date,
+        rt1_0.token,
+        rt1_0.user_id 
+    from
+        refresh_tokens rt1_0 
+    where
+        rt1_0.user_id=?
+2025-11-03 23:15:03.698 [http-nio-8084-exec-3] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        refresh_tokens
+        (expiry_date, token, user_id) 
+    values
+        (?, ?, ?)
+2025-11-03 23:15:03.740 [http-nio-8084-exec-3] INFO  c.e.d.c.aspects.PerformanceAspect - After execution of: login
+2025-11-03 23:15:03.741 [http-nio-8084-exec-3] INFO  c.e.d.c.aspects.PerformanceAspect - Execution time of method: loginis 448ms
+2025-11-03 23:15:03.742 [http-nio-8084-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2025-11-03 23:15:03.742 [http-nio-8084-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.demo2.dto.response.ApiResponse@2104178a]
+2025-11-03 23:15:03.752 [http-nio-8084-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-03 23:15:22.257 [http-nio-8084-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.avatar_url,
+        u1_0.bio,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-11-03 23:15:22.290 [http-nio-8084-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2025-11-03 23:15:22.300 [http-nio-8084-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/enrollments/1/show", parameters={}
+2025-11-03 23:15:22.301 [http-nio-8084-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.demo2.controller.EnrollmentController#show(Long, HttpServletRequest)
+2025-11-03 23:15:22.337 [http-nio-8084-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.avatar_url,
+        u1_0.bio,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    left join
+        user_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        u1_0.id=?
+2025-11-03 23:15:41.622 [http-nio-8084-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        e1_0.id,
+        e1_0.completed_at,
+        e1_0.course_id,
+        e1_0.enrolled_at,
+        e1_0.progress,
+        e1_0.student_id 
+    from
+        enrollments e1_0 
+    where
+        e1_0.id=? 
+        and e1_0.student_id=?
+2025-11-03 23:16:34.604 [http-nio-8084-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        c1_0.id,
+        c1_0.category_id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.instructor_id,
+        c1_0.level,
+        c1_0.price,
+        c1_0.status,
+        c1_0.thumbnail_url,
+        c1_0.title,
+        c1_0.updated_at 
+    from
+        courses c1_0 
+    where
+        c1_0.id=?
+2025-11-03 23:16:38.217 [http-nio-8084-exec-4] INFO  c.e.d.c.aspects.PerformanceAspect - After execution of: show
+2025-11-03 23:16:38.219 [http-nio-8084-exec-4] INFO  c.e.d.c.aspects.PerformanceAspect - Execution time of method: showis 75908ms
+2025-11-03 23:16:38.238 [http-nio-8084-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/yaml]
+2025-11-03 23:16:38.241 [http-nio-8084-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.demo2.dto.response.ApiResponse@4ef36efe]
+2025-11-03 23:16:38.265 [http-nio-8084-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-11-03 23:16:44.953 [http-nio-8084-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.avatar_url,
+        u1_0.bio,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-11-03 23:16:45.004 [http-nio-8084-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2025-11-03 23:16:45.013 [http-nio-8084-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/enrollments/1/show", parameters={}
+2025-11-03 23:16:45.014 [http-nio-8084-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.demo2.controller.EnrollmentController#show(Long, HttpServletRequest)
+2025-11-03 23:16:45.051 [http-nio-8084-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.avatar_url,
+        u1_0.bio,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    left join
+        user_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        u1_0.id=?
+2025-11-03 23:17:21.071 [http-nio-8084-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        e1_0.id,
+        e1_0.completed_at,
+        e1_0.course_id,
+        e1_0.enrolled_at,
+        e1_0.progress,
+        e1_0.student_id 
+    from
+        enrollments e1_0 
+    where
+        e1_0.id=? 
+        and e1_0.student_id=?
+2025-11-03 23:17:30.005 [http-nio-8084-exec-5] INFO  c.e.d.c.aspects.PerformanceAspect - After execution of: show
+2025-11-03 23:17:30.094 [http-nio-8084-exec-5] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.example.demo2.exception.GlobalExceptionHandler#handleNotFound(ResourceNotFoundException, HttpServletRequest)
+2025-11-03 23:17:30.131 [http-nio-8084-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/yaml]
+2025-11-03 23:17:30.132 [http-nio-8084-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.demo2.dto.common.response.ErrorResponse@21c2532]
+2025-11-03 23:17:30.155 [http-nio-8084-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.example.demo2.exception.ResourceNotFoundException: user not allow to see this: 1]
+2025-11-03 23:17:30.157 [http-nio-8084-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-11-03 23:18:03.631 [http-nio-8084-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.avatar_url,
+        u1_0.bio,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-11-03 23:18:03.688 [http-nio-8084-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2025-11-03 23:18:03.702 [http-nio-8084-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/enrollments/1/show", parameters={}
+2025-11-03 23:18:03.703 [http-nio-8084-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.demo2.controller.EnrollmentController#show(Long, HttpServletRequest)
+2025-11-03 23:18:03.730 [http-nio-8084-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.avatar_url,
+        u1_0.bio,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.full_name,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    left join
+        user_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        u1_0.id=?
+2025-11-03 23:18:08.146 [http-nio-8084-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        e1_0.id,
+        e1_0.completed_at,
+        e1_0.course_id,
+        e1_0.enrolled_at,
+        e1_0.progress,
+        e1_0.student_id 
+    from
+        enrollments e1_0 
+    where
+        e1_0.id=? 
+        and e1_0.student_id=?
+2025-11-03 23:18:08.155 [http-nio-8084-exec-6] INFO  c.e.d.c.aspects.PerformanceAspect - After execution of: show
+2025-11-03 23:18:08.156 [http-nio-8084-exec-6] INFO  c.e.d.c.aspects.PerformanceAspect - Execution time of method: showis 4448ms
+2025-11-03 23:18:08.157 [http-nio-8084-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/yaml]
+2025-11-03 23:18:08.160 [http-nio-8084-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.demo2.dto.response.ApiResponse@2c67dc95]
+2025-11-03 23:18:08.167 [http-nio-8084-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
