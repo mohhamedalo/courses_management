@@ -83,3 +83,14 @@ logging:
     max-size: 10MB                       # Max file size before rolling
     max-history: 30                      # Keep 30 days of logs
     total-size-cap: 1GB                  # Total size of all log files
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      base-path: /api/actuator
+      exposure:
+#        include: "health"
+        include: "health, info"
