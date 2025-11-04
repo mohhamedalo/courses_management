@@ -64,13 +64,13 @@ public class EnrollmentController {
     }
 
     @Operation(
-            summary = "Get enrollments",
-            description = "Returns list enrollments wrapped in ApiResponse"
+            summary = "Get list enrollment ",
+            description = "Returns a list of enrollment wrapped in ApiResponse"
     )
     @ApiResponses({
             @io.swagger.v3.oas.annotations.responses.ApiResponse(
                     responseCode = "200",
-                    description = "Successfully get list enrollments",
+                    description = "Successfully get list enrollment",
                     content = @Content(
                             mediaType = "application/json",
                             schema = @Schema(implementation = ApiResponse.class)
@@ -111,8 +111,8 @@ public class EnrollmentController {
     }
 
     @Operation(
-            summary = "Show enrollments",
-            description = "Returns detail enrollment wrapped in ApiResponse"
+            summary = "Get detail enrollment ",
+            description = "Returns an enrollment wrapped in ApiResponse"
     )
     @ApiResponses({
             @io.swagger.v3.oas.annotations.responses.ApiResponse(
@@ -124,20 +124,50 @@ public class EnrollmentController {
                     )
             )
     })
-    @GetMapping("/{id}/show")
+    @GetMapping("/{enrollmentId}/show")
     public ResponseEntity<ApiResponse<EnrollmentResponse>> show(
-            @PathVariable Long id,
+            @PathVariable Long enrollmentId,
             HttpServletRequest servletRequest
     ) {
-        var response = enrollmentService.findByOne(id);
+
+        var result = enrollmentService.show(enrollmentId);
 
         return ResponseEntity.ok(ApiResponse.<EnrollmentResponse>builder()
                 .success(true)
                 .message("Get detail Enrollment successful")
-                .data(response)
+                .data(result)
                 .meta(new ApiResponse.Meta(LocalDateTime.now(), servletRequest.getRequestURI()))
                 .build());
 
+    }
+
+    @Operation(
+            summary = "Delete enrollment ",
+            description = "Returns data wrapped in ApiResponse"
+    )
+    @ApiResponses({
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(
+                    responseCode = "200",
+                    description = "Successfully delete enrollment",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = ApiResponse.class)
+                    )
+            )
+    })
+    @DeleteMapping("/{enrollmentId}/delete")
+    public ResponseEntity<ApiResponse<?>> delete(
+            @PathVariable Long enrollmentId,
+            HttpServletRequest servletRequest
+    ) {
+        enrollmentService.delete(enrollmentId);
+
+        return ResponseEntity.ok(ApiResponse.<EnrollmentResponse>builder()
+                .success(true)
+                .message("Delete Enrollment successful")
+                .data(null)
+                .meta(new ApiResponse.Meta(LocalDateTime.now(), servletRequest.getRequestURI()))
+                .build());
     }
 
 }

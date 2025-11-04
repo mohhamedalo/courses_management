@@ -1,14 +1,12 @@
 package com.example.demo2.dto.request.quizzes;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
 import lombok.*;
 
-@Setter @Getter @Builder
+@Getter @Setter @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateQuizRequest {
+public class CreateQuizWithoutLessonFieldRequest {
     @NotBlank
     private String correctAnswer;
 
@@ -26,8 +24,4 @@ public class CreateQuizRequest {
 
     @NotBlank
     private String question;
-
-    @NotNull(message = "Lesson ID is required")
-    @Positive(message = "Lesson ID must be positive")
-    private Long lessonId;
 }

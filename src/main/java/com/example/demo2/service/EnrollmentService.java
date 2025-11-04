@@ -1,12 +1,17 @@
 package com.example.demo2.service;
 
+import com.example.demo2.dto.request.course.FilterCourseRequest;
 import com.example.demo2.dto.request.enrollments.EnrollmentRequest;
 import com.example.demo2.dto.request.enrollments.FilterEnrollmentRequest;
+import com.example.demo2.dto.response.CategoryResponse;
+import com.example.demo2.dto.response.courses.CourseResponse;
 import com.example.demo2.dto.response.enrollments.EnrollmentResponse;
+import com.example.demo2.entity.Category;
 import com.example.demo2.entity.Course;
 import com.example.demo2.entity.Enrollment;
 import com.example.demo2.entity.User;
 import com.example.demo2.exception.ResourceNotFoundException;
+import com.example.demo2.mapper.CourseMapper;
 import com.example.demo2.mapper.EnrollmentMapper;
 import com.example.demo2.repository.EnrollmentRepository;
 import com.example.demo2.repository.RoleRepository;
@@ -26,6 +31,7 @@ import org.springframework.util.StringUtils;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @AllArgsConstructor
@@ -129,30 +135,54 @@ public class EnrollmentService {
         };
     }
 
-    public EnrollmentResponse findByOne(Long id) {
-        // admin can see all records,
-        // user only see its records
+    public EnrollmentResponse show(Long enrollmentId) {
         User loginUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Long userId = loginUser.getId();
-
         User user = userRepository.findById(userId).orElseThrow(()-> new ResourceNotFoundException("user not found: " + userId));
 
         boolean isAdmin = user.getRoles()
                 .stream()
                 .anyMatch(role -> "ROLE_ADMIN".equals(role.getName()));
 
-        Enrollment e;
+        Enrollment enrollment;
 
         if (!isAdmin) {
-            e = enrollmentRepository
-                    .findByIdAndStudentId(id, userId)
-                    .orElseThrow(() -> new ResourceNotFoundException("user not allow to see this: " + id));
+            enrollment = enrollmentRepository
+                    .findByIdAndStudentId(enrollmentId, userId)
+                    .orElseThrow(() -> new ResourceNotFoundException("enrollment id not found: " + enrollmentId));
         } else {
-            e = enrollmentRepository
-                    .findById(id)
-                    .orElseThrow(() -> new ResourceNotFoundException("enrollment not found: " + id));
+            enrollment = enrollmentRepository
+                    .findById(enrollmentId)
+                    .orElseThrow(() -> new ResourceNotFoundException("enrollment id not found: " + enrollmentId));
         }
 
-        return EnrollmentMapper.toResponse(e);
+        return EnrollmentMapper.toResponse(enrollment);
+    }
+
+    public void delete(Long enrollmentId) {
+        User loginUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Long userId = loginUser.getId();
+        User user = userRepository.findById(userId).orElseThrow(()-> new ResourceNotFoundException("user not found: " + userId));
+
+        boolean isAdmin = user.getRoles()
+                .stream()
+                .anyMatch(role -> "ROLE_ADMIN".equals(role.getName()));
+
+        // admin can remove all enrollments
+        // user can remove itself enrollments
+        Enrollment enrollment = enrollmentRepository
+                .findById(enrollmentId)
+                .orElseThrow(() -> new ResourceNotFoundException("Enrollment not found: "+ enrollmentId));
+
+        if (!isAdmin) {
+            if (Objects.equals(enrollment.getStudent().getId(), userId)) {
+                enrollmentRepository.delete(enrollment);
+            } else {
+                throw new RuntimeException("not allow to delete other enrollments");
+            }
+
+        } else {
+            enrollmentRepository.delete(enrollment);
+        }
     }
 }
