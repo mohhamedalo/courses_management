@@ -7,6 +7,11 @@ import com.example.demo2.dto.response.ApiResponse;
 import com.example.demo2.dto.response.CategoryResponse;
 import com.example.demo2.dto.response.courses.CourseResponse;
 import com.example.demo2.service.CourseService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -26,9 +31,24 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @RequestMapping("/api/courses")
+@Tag(name = "Course API", description = "Operations related to courses")
 public class CourseController {
     private final CourseService courseService;
 
+    @Operation(
+            summary = "Create courses ",
+            description = "Returns a category wrapped in ApiResponse"
+    )
+    @ApiResponses({
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(
+                    responseCode = "200",
+                    description = "Successfully create category",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = ApiResponse.class)
+                    )
+            )
+    })
     @PostMapping
     public ResponseEntity<ApiResponse<?>> create(
             @Valid @RequestBody CreateCourseRequest request,
@@ -44,6 +64,20 @@ public class CourseController {
                 .build());
     }
 
+    @Operation(
+            summary = "Update courses ",
+            description = "Returns a category wrapped in ApiResponse"
+    )
+    @ApiResponses({
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(
+                    responseCode = "200",
+                    description = "Successfully update category",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = ApiResponse.class)
+                    )
+            )
+    })
     @PutMapping("/{courseId}/update")
     public ResponseEntity<ApiResponse<?>> update(
             @PathVariable Long courseId,
@@ -60,6 +94,20 @@ public class CourseController {
                 .build());
     }
 
+    @Operation(
+            summary = "Get courses ",
+            description = "Returns list courses wrapped in ApiResponse"
+    )
+    @ApiResponses({
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(
+                    responseCode = "200",
+                    description = "Successfully get list courses category",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = ApiResponse.class)
+                    )
+            )
+    })
     @GetMapping
     public ResponseEntity<ApiResponse<Page<CourseResponse>>> getAll(
             @Valid FilterCourseRequest filter,
@@ -93,8 +141,20 @@ public class CourseController {
         return PageRequest.of(page, size, Sort.by(orders));
     }
 
-
-
+    @Operation(
+            summary = "Delete course",
+            description = "Returns a category wrapped in ApiResponse"
+    )
+    @ApiResponses({
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(
+                    responseCode = "200",
+                    description = "Successfully delete category",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = ApiResponse.class)
+                    )
+            )
+    })
     @DeleteMapping("/{courseId}/delete")
     public ResponseEntity<ApiResponse<?>> delete(@PathVariable Long courseId, HttpServletRequest servletRequest) {
         courseService.delete(courseId);

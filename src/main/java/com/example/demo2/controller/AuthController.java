@@ -6,6 +6,11 @@ import com.example.demo2.dto.request.*;
 import com.example.demo2.dto.response.*;
 import com.example.demo2.repository.UserRepository;
 import com.example.demo2.service.AuthService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +23,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
+@Tag(name = "Authentication API", description = "Operations related to authentication")
 public class AuthController {
 
     private final AuthenticationManager authenticationManager;
@@ -35,6 +41,20 @@ public class AuthController {
         this.authService = authService;
     }
 
+    @Operation(
+            summary = "Get detail authentication",
+            description = "Returns a paginated list of categories wrapped in ApiResponse"
+    )
+    @ApiResponses({
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(
+                    responseCode = "200",
+                    description = "Successfully retrieved detail authentication",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = ApiResponse.class)
+                    )
+            )
+    })
     @PostMapping("/register")
     public ResponseEntity<ApiResponse<String>> register(@Valid @RequestBody RegisterRequest request,
                                                         HttpServletRequest servletRequest) {
@@ -47,6 +67,20 @@ public class AuthController {
                 .build());
     }
 
+    @Operation(
+            summary = "Login API",
+            description = "Returns data login wrapped in ApiResponse"
+    )
+    @ApiResponses({
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(
+                    responseCode = "200",
+                    description = "Successfully login",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = ApiResponse.class)
+                    )
+            )
+    })
     @PostMapping("/login")
     public ResponseEntity<ApiResponse<AuthResponse>> login(@Valid @RequestBody LoginRequest request,
                                                            HttpServletRequest servletRequest) {
@@ -59,6 +93,20 @@ public class AuthController {
                 .build());
     }
 
+    @Operation(
+            summary = "Refresh token",
+            description = "Returns login information wrapped in ApiResponse"
+    )
+    @ApiResponses({
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(
+                    responseCode = "200",
+                    description = "Successfully get token",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = ApiResponse.class)
+                    )
+            )
+    })
     @PostMapping("/refresh")
     public ResponseEntity<ApiResponse<AuthResponse>> refreshToken(
             @RequestBody Map<String, String> request, HttpServletRequest servletRequest) {
@@ -74,6 +122,20 @@ public class AuthController {
                 .build());
     }
 
+    @Operation(
+            summary = "Logout",
+            description = "Returns data wrapped in ApiResponse"
+    )
+    @ApiResponses({
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(
+                    responseCode = "200",
+                    description = "Successfully logout",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = ApiResponse.class)
+                    )
+            )
+    })
     @PostMapping("/logout")
     public ResponseEntity<ApiResponse<String>> logout(@RequestParam String email, HttpServletRequest servletRequest) {
         String result = authService.logout(email);

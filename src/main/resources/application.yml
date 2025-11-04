@@ -94,3 +94,8 @@ management:
       exposure:
 #        include: "health"
         include: "health, info"
+
+app:
+  upload:
+    dir: ./uploads
+    max-size: 10MB

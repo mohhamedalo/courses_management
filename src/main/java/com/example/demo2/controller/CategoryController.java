@@ -29,6 +29,20 @@ import java.time.LocalDateTime;
 public class CategoryController {
     private final CategoryService categoryService;
 
+    @Operation(
+            summary = "Create categories ",
+            description = "Returns a category wrapped in ApiResponse"
+    )
+    @ApiResponses({
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(
+                    responseCode = "200",
+                    description = "Successfully create category",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = ApiResponse.class)
+                    )
+            )
+    })
     @PostMapping
     public ResponseEntity<ApiResponse<CategoryResponse>> create(@Valid @RequestBody CreateCategoryRequest request, HttpServletRequest servletRequest) {
         CategoryResponse response = categoryService.create(request);
@@ -77,6 +91,20 @@ public class CategoryController {
             .build());
     }
 
+    @Operation(
+            summary = "Get detail category",
+            description = "Returns a category wrapped in ApiResponse"
+    )
+    @ApiResponses({
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(
+                    responseCode = "200",
+                    description = "Successfully get detail category",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = ApiResponse.class)
+                    )
+            )
+    })
     @GetMapping("/{categoryId}/detail")
     public ResponseEntity<ApiResponse<CategoryResponse>> detail(
             @PathVariable @Positive Long categoryId,
@@ -92,6 +120,20 @@ public class CategoryController {
                 .build());
     }
 
+    @Operation(
+            summary = "Update category",
+            description = "Returns a category wrapped in ApiResponse"
+    )
+    @ApiResponses({
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(
+                    responseCode = "200",
+                    description = "Successfully update category",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = ApiResponse.class)
+                    )
+            )
+    })
     @PutMapping("/{categoryId}/update")
     public ResponseEntity<ApiResponse<CategoryResponse>> update(
             @PathVariable @Positive Long categoryId,
@@ -108,6 +150,16 @@ public class CategoryController {
                 .build());
     }
 
+    @ApiResponses({
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(
+                    responseCode = "200",
+                    description = "Successfully delete category",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = ApiResponse.class)
+                    )
+            )
+    })
     @DeleteMapping("/{categoryId}/delete")
     public ResponseEntity<ApiResponse<?>> delete(
         @PathVariable @Positive Long categoryId,

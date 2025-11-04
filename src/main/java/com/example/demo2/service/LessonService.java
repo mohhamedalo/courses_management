@@ -1,6 +1,7 @@
 package com.example.demo2.service;
 
 import com.example.demo2.dto.request.lessons.CreateLessonRequest;
+import com.example.demo2.dto.request.lessons.UpdateLessonRequest;
 import com.example.demo2.dto.response.lessons.LessonResponse;
 import com.example.demo2.entity.Course;
 import com.example.demo2.entity.Lesson;
@@ -57,5 +58,32 @@ public class LessonService {
         return lessonRepository
                 .findById(lessonId)
                 .orElseThrow(() -> new ResourceNotFoundException("lesson not found :" + lessonId));
+    }
+
+    public LessonResponse update(Long lessonId, UpdateLessonRequest request) {
+        Lesson l = this.findOne(lessonId);
+
+        if (request.getTitle() != null && !request.getTitle().isBlank()) {
+            l.setTitle(request.getTitle());
+        }
+
+        if (request.getContent() != null && !request.getContent().isBlank()) {
+            l.setContent(request.getContent());
+        }
+
+        if (request.getVideoUrl() != null && !request.getVideoUrl().isBlank()) {
+            l.setVideoUrl(request.getVideoUrl());
+        }
+
+        l = lessonRepository.save(l);
+
+        return LessonMapper.toResponse(l);
+    }
+
+    public void delete(Long lessonId) {
+        Lesson l = lessonRepository.findById(lessonId)
+                .orElseThrow(() -> new ResourceNotFoundException("lesson not found: " + lessonId));
+
+        lessonRepository.delete(l);
     }
 }
