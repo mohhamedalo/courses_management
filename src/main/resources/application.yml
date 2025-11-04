@@ -33,7 +33,7 @@ spring:
 
   data:
     redis:
-      host: localhost         # Tên service trong Docker
+      host: redis         # Tên service trong Docker
       port: 6379
       password: null       # Không cần nếu không set
       timeout: 2000ms
@@ -53,7 +53,7 @@ spring:
         courseapp:
       use-key-prefix: true
 server:
-  port: 8084
+  port: 8080
 
 #logging:
 #  level:
