@@ -9,3 +9,5 @@ Setup postgresql-15 instead of postgresql:16-alpine to work consistently both on
 
 manage actuator:
 http://localhost:8084/api/actuator/health
+
+test rules - develop branch
