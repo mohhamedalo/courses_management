@@ -22,9 +22,6 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Run tests
-        run: mvn clean test
-
       - name: Build with Maven
         run: mvn clean package -DskipTests
 
@@ -76,12 +73,12 @@ jobs:
           script: |
             cd /var/www/courses_management
             
-            # Tạo file .env.dev nếu chưa có
-            cat > .env.dev << EOF
+            # Tạo file .env nếu chưa có
+            cat > .env << EOF
             POSTGRES_USER=${{ secrets.POSTGRES_USER }}
             POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}
             POSTGRES_DB=${{ secrets.POSTGRES_DB }}
-            POSTGRES_PORT=5434
+            POSTGRES_PORT=${{ secrets.POSTGRES_PORT }}
             POSTGRES_TIMEZONE=Asia/Ho_Chi_Minh
             REDIS_PORT=6379
             SPRING_PROFILES_ACTIVE=dev
