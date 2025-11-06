@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5434/course_db
-    username: postgres
-    password: postgres
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5434/course_db}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:postgres}
   jpa:
     hibernate:
       jdbc:
@@ -33,8 +33,8 @@ spring:
 
   data:
     redis:
-      host: localhost         # Tên service trong Docker
-      port: 6379
+      host: ${SPRING_DATA_REDIS_HOST:localhost}         # Tên service trong Docker
+      port: ${SPRING_DATA_REDIS_PORT:6379}
       password: null       # Không cần nếu không set
       timeout: 2000ms
       lettuce:
@@ -53,17 +53,7 @@ spring:
         courseapp:
       use-key-prefix: true
 server:
-  port: 8084
-
-#logging:
-#  level:
-#    org.springframework.data.redis: DEBUG
-#    io.lettuce.core: DEBUG
-#    org.flywaydb: INFO  # Xem Flyway chạy migration
-#    org.hibernate.SQL: DEBUG
-#    org.hibernate.type.descriptor.sql: TRACE
-#    org.springframework: DEBUG
-#    org.springframework.boot.web: DEBUG
+  port: ${SERVER_PORT:8084}
 
 logging:
   level:
@@ -73,6 +63,7 @@ logging:
     org.springframework.web: DEBUG       # Spring framework
     org.hibernate.SQL: DEBUG             # Show SQL queries
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE  # Show SQL parameters
+    org.springframework.data.redis: DEBUG
 
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
@@ -97,5 +88,5 @@ management:
 
 app:
   upload:
-    dir: ./uploads
+    dir: /uploads
     max-size: 10MB
