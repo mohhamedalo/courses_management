@@ -11,3 +11,4 @@ manage actuator:
 http://localhost:8084/api/actuator/health
 
 test rules - develop branch
+test rules2 - develop branch
