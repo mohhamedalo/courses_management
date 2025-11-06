@@ -27,8 +27,7 @@ services:
       - app-network
 
   app:
-    build: .
-    container_name: springboot-app
+    image: ${DOCKERHUB_USERNAME}/courseonlineapp:latest
     depends_on:
       - postgres
       - redis
