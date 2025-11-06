@@ -11,3 +11,5 @@ manage actuator:
 http://localhost:8084/api/actuator/health
 
 docker-compose --env-file .env.dev up -d --build
+
+test-cicd-v1.1
