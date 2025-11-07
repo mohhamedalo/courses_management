@@ -18,3 +18,5 @@ test-cicd-v1.3
 test-cicd-v1.4
 test-cicd-v1.5
 test-cicd-v1.6
+test-cicd-v2.1
+test-cicd-v2.2
