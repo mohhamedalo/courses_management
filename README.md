@@ -20,3 +20,4 @@ test-cicd-v1.5
 test-cicd-v1.6
 test-cicd-v2.1
 test-cicd-v2.2
+test-cicd-v3.0
