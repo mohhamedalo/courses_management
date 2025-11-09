@@ -27,3 +27,4 @@ test-cicd-3.3
 test-cicd-3.4
 test-cicd-3.5
 test-cicd-3.6
+test-cicd-4.0
