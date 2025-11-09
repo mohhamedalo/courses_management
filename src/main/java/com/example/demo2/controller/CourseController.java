@@ -31,7 +31,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @RequestMapping("/api/courses")
-@Tag(name = "Course API(cicd version)", description = "Operations related to courses")
+@Tag(name = "Course API(cicd version 5.0)", description = "Operations related to courses")
 public class CourseController {
     private final CourseService courseService;
 
